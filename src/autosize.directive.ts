@@ -15,8 +15,10 @@ export class Autosize {
     this.adjust();
   }
   adjust(): void{
+    let scrollPosition = window.scrollY;
     this.element.nativeElement.style.overflow = 'hidden';
     this.element.nativeElement.style.height = 'auto';
     this.element.nativeElement.style.height = this.element.nativeElement.scrollHeight + "px";
+    window.scrollTo(0, scrollPosition);
   }
 }
